@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prinoso Inc.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #1a1510;
+    color: #f0ebe3;
+    font-family: 'Cinzel', serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 40px 0;
+    position: relative;
+  }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .symbol { flex-shrink: 0; }
+
+  .wordmark {
+    font-weight: 400;
+    font-size: 52px;
+    letter-spacing: 0.22em;
+    color: #f0ebe3;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-right: -0.22em;
+  }
+
+  .tagline {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    margin-right: -0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #b8976a;
+    opacity: 0;
+    animation: fade-in 1s 0.6s ease forwards;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, #b8976a33, transparent);
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 24px 40px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-divider {
+    width: 32px;
+    height: 1px;
+    background: #b8976a;
+    opacity: 0.3;
+    margin: 0 auto 20px;
+  }
+
+  .section p {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    line-height: 2.2;
+    color: #a69882;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 24px 40px 32px;
+    text-align: center;
+  }
+
+  .footer-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .footer-wordmark {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #f0ebe3;
+    opacity: 0.3;
+    margin-right: -0.22em;
+  }
+
+  .footer-contact a {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #b8976a;
+    opacity: 0.4;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer-contact a:hover { opacity: 0.8; }
+
+  .copyright {
+    margin-top: 20px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #2e2318;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0; }
+    50%      { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .wordmark { font-size: 32px; }
+    .tagline  { font-size: 9px; letter-spacing: 0.3em; }
+    .section  { padding: 80px 28px; }
+    .section p { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="mark">
+      <div class="symbol">
+        <svg width="42" height="62" viewBox="0 0 42 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="rotate(18, 21, 31)">
+            <polygon points="21,2 27,31 21,38 15,31" fill="#f0ebe3"/>
+            <polygon points="21,38 26,31 21,58 16,31" fill="#b8976a" opacity="0.65"/>
+          </g>
+        </svg>
+      </div>
+      <div class="wordmark">Prinoso</div>
+    </div>
+    <p class="tagline">Strategic Holdings &amp; Advisory</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="section-divider"></div>
+    <p>
+      Prinoso is a holding company and strategic advisory practice.
+      We operate at the intersection of capital, structure, and long-term thinking &mdash;
+      partnering quietly with organizations navigating complexity.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-mark">
+      <svg width="14" height="21" viewBox="0 0 42 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g transform="rotate(18, 21, 31)">
+          <polygon points="21,2 27,31 21,38 15,31" fill="#f0ebe3" opacity="0.3"/>
+          <polygon points="21,38 26,31 21,58 16,31" fill="#b8976a" opacity="0.2"/>
+        </g>
+      </svg>
+      <span class="footer-wordmark">Prinoso</span>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:sonia@prinoso.com">Inquiries</a>
+    </div>
+    <p class="copyright">&copy; 2026 Prinoso Inc. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
